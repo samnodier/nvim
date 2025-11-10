@@ -126,6 +126,7 @@ return {
         "typescript",
         "vim",
         "yaml",
+        "htmldjango",
       },
     },
   },
