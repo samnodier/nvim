@@ -5,7 +5,7 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
   if vim.v.shell_error ~= 0 then
     vim.api.nvim_echo({
       { "Failed to clone lazy.nvim:\n", "ErrorMsg" },
-      { out,                            "WarningMsg" },
+      { out, "WarningMsg" },
       { "\nPress any key to exit..." },
     }, true, {})
     vim.fn.getchar()
@@ -19,6 +19,18 @@ require("lazy").setup({
     -- add LazyVim and import its plugins
     { "LazyVim/LazyVim", import = "lazyvim.plugins" },
     -- import/override with your plugins
+    -- Sets up Pyright, Black, Isort, and Debugpy automatically
+    { import = "lazyvim.plugins.extras.lang.python" },
+
+    -- Typescript (uses vtsls and set up ESLint integration )
+    { import = "lazyvim.plugins.extras.lang.typescript" },
+
+    -- JSON (add schemas to get autocompletion for config keys)
+    { import = "lazyvim.plugins.extras.lang.json" },
+
+    -- Prettier (ensures consistent formatting)
+    { import = "lazyvim.plugins.extras.formatting.prettier" },
+
     { import = "plugins" },
   },
   defaults = {
@@ -30,23 +42,26 @@ require("lazy").setup({
     version = false, -- always use the latest git commit
     -- version = "*", -- try installing the latest stable version for plugins that support semver
   },
-  install = { colorscheme = { "onedark", "habamax" } },
+  install = { colorscheme = { "kanagawa", "catppuccin" } },
   checker = {
     enabled = true, -- check for plugin updates periodically
     notify = false, -- notify on update
-  },                -- automatically check for plugin updates
+  }, -- automatically check for plugin updates
   performance = {
     rtp = {
       -- disable some rtp plugins
       disabled_plugins = {
         "gzip",
-        -- "matchit",
-        -- "matchparen",
-        -- "netrwPlugin",
+        "man",
+        "matchit",
+        "matchparen",
+        "netrwPlugin",
         "tarPlugin",
         "tohtml",
         "tutor",
         "zipPlugin",
+        "rplugin",
+        "spellfile",
       },
     },
   },

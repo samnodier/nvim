@@ -1,12 +1,13 @@
 return {
   {
-    "navarasu/onedark.nvim",
+    "rebelot/kanagawa.nvim", -- https://github.com/rebelot/kanagawa.nvim
+    lazy = false,
     priority = 1000, -- Load before other plugins
     config = function()
-      require("onedark").setup {
-        style = "darker",
-      }
-      require("onedark").load()
+      require("kanagawa").setup({
+        -- optional custom settings
+      })
+      vim.cmd("colorscheme kanagawa-dragon")
     end,
   },
 }
