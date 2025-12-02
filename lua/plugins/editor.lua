@@ -109,7 +109,13 @@ return {
     },
   },
 
-  -- 10. HARPOON (Quick Navigation)
+  -- 10. MATCHUP for navigating between the html tags instead of < and >
+  {
+    "andymass/vim-matchup",
+    dependencies = { "nvim-treesitter/nvim-treesitter" },
+  },
+
+  -- 11. HARPOON (Quick Navigation)
   {
     "ThePrimeagen/harpoon",
     branch = "harpoon2",
