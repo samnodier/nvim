@@ -21,3 +21,24 @@ vim.api.nvim_create_autocmd("FileType", {
     vim.wo.conceallevel = 0
   end,
 })
+
+-- HTML Indentation = 2 space and other web files as well
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = {
+    "html",
+    "htmldjango",
+    "javascriptreact",
+    "typescriptreact",
+    "javascript",
+    "typescript",
+    "css",
+    "scss",
+    "json",
+  },
+  callback = function()
+    vim.opt_local.shiftwidth = 2 -- indent size
+    vim.opt_local.tapstop = 2 -- how many space a tab feels like
+    vim.opt_local.softtabstop = 2 -- backspace delete spacing
+    vim.opt_local.expandtab = true -- convert tabs to spaces
+  end,
+})
