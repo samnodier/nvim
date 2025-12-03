@@ -37,7 +37,7 @@ vim.api.nvim_create_autocmd("FileType", {
   },
   callback = function()
     vim.opt_local.shiftwidth = 2 -- indent size
-    vim.opt_local.tapstop = 2 -- how many space a tab feels like
+    vim.opt_local.tabstop = 2 -- how many space a tab feels like
     vim.opt_local.softtabstop = 2 -- backspace delete spacing
     vim.opt_local.expandtab = true -- convert tabs to spaces
   end,
