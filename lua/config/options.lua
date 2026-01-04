@@ -16,6 +16,8 @@ vim.opt.clipboard = "unnamedplus"
 -- Why? It prevents you from typing at the very edge of the screen, helping you see the context of your code.
 vim.opt.scrolloff = 8
 
+vim.opt.guicursor = "n-v-c-sm:block,i-ci-ve:block,r-cr-o:block"
+
 -- WRAPPING
 vim.opt.wrap = false
 
